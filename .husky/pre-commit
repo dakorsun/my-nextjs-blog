@@ -1,1 +1,5 @@
-echo "TODO: pre-commit hook"
+#!/bin/sh
+
+echo "Linting staged files"
+
+pnpm lint-staged

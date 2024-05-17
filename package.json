@@ -3,7 +3,7 @@
   "version": "0.1.0-dev.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -15,9 +15,11 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@t3-oss/env-nextjs": "^0.10.1",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",

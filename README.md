@@ -1,9 +1,11 @@
-### My NextJs Blog
+# My NextJs Blog
 
-# May the all i want bo on this
+## May the all i want be there
 
-MVP:
+### MVP:
 
+- [] Environment setup and validation (\w zod and t3-oss maybe)
+- [] Default layout
 - [] Github sign in
 - [] Portal and Admin panel separation
 - [] Database (\w Drizzle+Postgress on vercel???)

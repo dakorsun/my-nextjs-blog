@@ -4,9 +4,9 @@
 
 ### MVP:
 
-- [] Environment setup and validation (\w zod and t3-oss maybe)
-- [] Default layout
-- [] Github sign in
+- [x] Environment setup and validation (\w zod and t3-oss maybe)
+- [x] Default layout
+- [x] Github sign in
 - [] Portal and Admin panel separation
 - [] Database (\w Drizzle+Postgress on vercel???)
 - [] Deployment (\w vercel???)

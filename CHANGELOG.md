@@ -1,3 +1,9 @@
+# [0.1.0-dev.2](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.1...v0.1.0-dev.2) (2024-05-18)
+
+### Features
+
+- github login ([35e90cb](https://github.com/dakorsun/my-nextjs-blog/commit/35e90cb0dfe6b09fb2df0d2f399231fe3a522f73))
+
 # [0.1.0-dev.1](https://github.com/dakorsun/my-nextjs-blog/compare/v0.0.0...v0.1.0-dev.1) (2024-05-17)
 
 ### Bug Fixes

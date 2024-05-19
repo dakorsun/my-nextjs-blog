@@ -8,7 +8,7 @@
 - [x] Default layout
 - [x] Github sign in
 - [] Portal and Admin panel separation
-- [] ~Database (\w Drizzle+Postgress on vercel???))~ (decided to move with Github's data source)
+- [] ~Database (\w Drizzle+Postgress on vercel???)~ (decided to move with Github's data source)
 - [] Deployment (\w vercel???)
 - [] Blog Post template:
   - [] Post model to load on Github

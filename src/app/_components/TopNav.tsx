@@ -2,6 +2,27 @@
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
 import { useMemo } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+import { Nullable } from '~/util/types';
+import { isAdminEmail } from '~/util/authentication';
+
+interface IAdminButtonProps {
+  email: Nullable<string>;
+}
+function AdminButton({ email }: IAdminButtonProps) {
+  const pathname = usePathname();
+  const isDisplaying = useMemo(() => {
+    const isAdminRoute = pathname.startsWith('/admin');
+    const isAdmin = isAdminEmail(email);
+    return !isAdminRoute && isAdmin;
+  }, [email, pathname]);
+  if (isDisplaying) {
+    return <Link href="admin">Admin</Link>;
+  }
+  return <></>;
+}
 
 interface IAuthButtonProps {
   session: Session | null;
@@ -22,8 +43,13 @@ export default function TopNav() {
   const isSessionLoading = useMemo(() => status === 'loading', [status]);
   return (
     <nav className="flex w-full items-center justify-between p-4 text-xl font-semibold border-b">
-      <div>My NextJs Blog</div>
-      <AuthButton session={session} sessionLoading={isSessionLoading} />
+      <div>
+        <Link href="/">My NextJs Blog</Link>
+      </div>
+      <div className="flex items-center justify-between gap-2">
+        <AdminButton email={session?.user?.email ?? null} />
+        <AuthButton session={session} sessionLoading={isSessionLoading} />
+      </div>
     </nav>
   );
 }

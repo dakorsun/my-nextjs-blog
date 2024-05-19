@@ -1,4 +1,5 @@
 import { getServerSession, type DefaultSession, type NextAuthOptions } from 'next-auth';
+import NextAuth from 'next-auth/next';
 import GithubProvider from 'next-auth/providers/github';
 
 import { env } from '~/env';
@@ -29,7 +30,7 @@ declare module 'next-auth' {
  *
  * @see https://next-auth.js.org/configuration/options
  */
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   callbacks: {
     session: ({ session }) => {
       return {
@@ -44,6 +45,8 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
 };
+
+export const handlers = NextAuth(authOptions);
 
 /**
  * Wrapper for `getServerSession` so that you don't need to import the `authOptions` in every file.

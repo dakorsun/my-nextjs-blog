@@ -5,7 +5,6 @@ import { getServerSession } from 'next-auth';
 
 import SessionProvider from '~/app/_components/SessionProvider';
 import TopNav from './_components/TopNav';
-import { authOptions } from '~/server/auth';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +18,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession();
   return (
     <html lang="en">
       <body className={`font-sans ${inter.className} flex-col gap-4`}>

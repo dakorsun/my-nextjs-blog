@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 
 import { Nullable } from '~/util/types';
 import { isAdminEmail } from '~/util/authentication';
+import { Button } from '~/components/ui/button';
 
 interface IAdminButtonProps {
   email: Nullable<string>;
@@ -30,12 +31,12 @@ interface IAuthButtonProps {
 }
 function AuthButton({ session, sessionLoading }: IAuthButtonProps) {
   if (session) {
-    return <button onClick={() => signOut()}>Sign Out</button>;
+    return <Button onClick={() => signOut()}>Sign Out</Button>;
   }
   if (sessionLoading) {
     return <div>...Loading</div>;
   }
-  return <button onClick={() => signIn()}>Sign in</button>;
+  return <Button onClick={() => signIn()}>Sign in</Button>;
 }
 
 export default function TopNav() {

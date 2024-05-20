@@ -1,3 +1,9 @@
+# [0.1.0-dev.4](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.3...v0.1.0-dev.4) (2024-05-20)
+
+### Bug Fixes
+
+- adjusted configurations for vercel deployment ([6383759](https://github.com/dakorsun/my-nextjs-blog/commit/6383759f94f3e34e2431c11c8bdf332535111956))
+
 # [0.1.0-dev.3](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.2...v0.1.0-dev.3) (2024-05-19)
 
 ### Features

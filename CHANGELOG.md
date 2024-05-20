@@ -1,3 +1,10 @@
+# [0.1.0-dev.5](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.4...v0.1.0-dev.5) (2024-05-20)
+
+### Features
+
+- shadcn/ui integration ([#6](https://github.com/dakorsun/my-nextjs-blog/issues/6)) ([4d69bb4](https://github.com/dakorsun/my-nextjs-blog/commit/4d69bb4b94eb4e7fbf601b4da81f44db0c8b76e6))
+- theme switcher ([e483c13](https://github.com/dakorsun/my-nextjs-blog/commit/e483c13bf68ddacdfd93dd5d16f63bff9da020c0))
+
 # [0.1.0-dev.4](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.3...v0.1.0-dev.4) (2024-05-20)
 
 ### Bug Fixes

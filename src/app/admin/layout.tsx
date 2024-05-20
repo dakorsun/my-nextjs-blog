@@ -1,4 +1,4 @@
-import { AdminProtectedRoute } from '../_components/AdminProtectedRoute';
+import { AdminProtectedRoute } from '~/components/AdminProtectedRoute';
 
 export default function AdminLayout({
   children,

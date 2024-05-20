@@ -3,8 +3,8 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { getServerSession } from 'next-auth';
 
-import SessionProvider from '~/app/_components/SessionProvider';
-import TopNav from './_components/TopNav';
+import SessionProvider from '~/components/SessionProvider';
+import TopNav from '~/components/TopNav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,7 +21,7 @@ export default async function RootLayout({
   const session = await getServerSession();
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.className} flex-col gap-4`}>
+      <body className={`bg-primary font-sans ${inter.className} antialiased flex-col gap-4`}>
         <SessionProvider session={session}>
           <TopNav />
           {children}

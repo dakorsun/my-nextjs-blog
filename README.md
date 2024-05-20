@@ -16,6 +16,11 @@
     - [x] Theme switcher
   - [x] Buttons
   - [] Inputs/Textareas
+- [] Github Issues
+  - [] Octokit integration
+  - [] (admin) Create, Read, Update Issues
+  - [] (admin) Predefined labels for Issues
+  - [] Display specific labels on Portal
 - [] Blog Post template:
   - [] Research - Plain markdown with preview or skeleton
   - [] Post model to load on Github

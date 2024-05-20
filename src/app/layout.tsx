@@ -5,6 +5,7 @@ import { getServerSession } from 'next-auth';
 
 import SessionProvider from '~/components/SessionProvider';
 import TopNav from '~/components/TopNav';
+import { ThemeProvider } from '~/components/theme-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,10 +22,12 @@ export default async function RootLayout({
   const session = await getServerSession();
   return (
     <html lang="en">
-      <body className={`bg-primary font-sans ${inter.className} antialiased flex-col gap-4`}>
+      <body className={`bg-background font-sans ${inter.className} antialiased flex-col gap-4`}>
         <SessionProvider session={session}>
-          <TopNav />
-          {children}
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <TopNav />
+            {children}
+          </ThemeProvider>
         </SessionProvider>
       </body>
     </html>

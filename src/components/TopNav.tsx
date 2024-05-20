@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import { Nullable } from '~/util/types';
 import { isAdminEmail } from '~/util/authentication';
 import { Button } from '~/components/ui/button';
+import { ThemeModeToggle } from './ui/theme-mode-toggle';
 
 interface IAdminButtonProps {
   email: Nullable<string>;
@@ -15,15 +16,18 @@ interface IAdminButtonProps {
 function AdminButton({ email }: IAdminButtonProps) {
   const pathname = usePathname();
   const isDisplaying = useMemo(() => {
-    const isAdminRoute = pathname.startsWith('/admin');
-    const isAdmin = isAdminEmail(email);
-    return !isAdminRoute && isAdmin;
-  }, [email, pathname]);
+    return isAdminEmail(email);
+  }, [email]);
+  const isDisabled = useMemo(() => {
+    return pathname.startsWith('/admin');
+  }, [pathname]);
   if (isDisplaying) {
     return (
-      <Link className="text-primary" href="admin">
-        Admin
-      </Link>
+      <Button variant="link" disabled={isDisabled} size="default">
+        <Link className="text-primary" href="admin">
+          Admin
+        </Link>
+      </Button>
     );
   }
   return <></>;
@@ -35,12 +39,20 @@ interface IAuthButtonProps {
 }
 function AuthButton({ session, sessionLoading }: IAuthButtonProps) {
   if (session) {
-    return <Button onClick={() => signOut()}>Sign Out</Button>;
+    return (
+      <Button variant="outline" size="default" onClick={() => signOut()}>
+        Sign Out
+      </Button>
+    );
   }
   if (sessionLoading) {
     return <div>...Loading</div>;
   }
-  return <Button onClick={() => signIn()}>Sign in</Button>;
+  return (
+    <Button variant="outline" size="default" onClick={() => signIn()}>
+      Sign in
+    </Button>
+  );
 }
 
 export default function TopNav() {
@@ -48,13 +60,14 @@ export default function TopNav() {
   const isSessionLoading = useMemo(() => status === 'loading', [status]);
   return (
     <nav className="bg-secondary flex w-full items-center justify-between p-4 text-xl font-semibold border-b">
-      <div>
+      <div className="flex items-center gap-2 justify-between">
         <Link href="/" className="text-accent-foreground">
           My NextJs Blog
         </Link>
       </div>
       <div className="flex items-center justify-between gap-2">
         <AdminButton email={session?.user?.email ?? null} />
+        <ThemeModeToggle />
         <AuthButton session={session} sessionLoading={isSessionLoading} />
       </div>
     </nav>

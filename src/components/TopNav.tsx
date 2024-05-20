@@ -20,7 +20,11 @@ function AdminButton({ email }: IAdminButtonProps) {
     return !isAdminRoute && isAdmin;
   }, [email, pathname]);
   if (isDisplaying) {
-    return <Link href="admin">Admin</Link>;
+    return (
+      <Link className="text-primary" href="admin">
+        Admin
+      </Link>
+    );
   }
   return <></>;
 }
@@ -43,9 +47,11 @@ export default function TopNav() {
   const { data: session, status } = useSession();
   const isSessionLoading = useMemo(() => status === 'loading', [status]);
   return (
-    <nav className="flex w-full items-center justify-between p-4 text-xl font-semibold border-b">
+    <nav className="bg-secondary flex w-full items-center justify-between p-4 text-xl font-semibold border-b">
       <div>
-        <Link href="/">My NextJs Blog</Link>
+        <Link href="/" className="text-accent-foreground">
+          My NextJs Blog
+        </Link>
       </div>
       <div className="flex items-center justify-between gap-2">
         <AdminButton email={session?.user?.email ?? null} />

@@ -21,7 +21,7 @@ export default async function RootLayout({
   const session = await getServerSession();
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.className} flex-col gap-4`}>
+      <body className={`bg-primary font-sans ${inter.className} antialiased flex-col gap-4`}>
         <SessionProvider session={session}>
           <TopNav />
           {children}

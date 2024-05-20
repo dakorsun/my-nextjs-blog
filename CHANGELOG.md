@@ -1,3 +1,9 @@
+# [0.1.0-dev.6](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.5...v0.1.0-dev.6) (2024-05-20)
+
+### Bug Fixes
+
+- github is the only sign in method by now ([ff49422](https://github.com/dakorsun/my-nextjs-blog/commit/ff494226fa0d72d303f42950146078abf8a49cbb))
+
 # [0.1.0-dev.5](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.4...v0.1.0-dev.5) (2024-05-20)
 
 ### Features

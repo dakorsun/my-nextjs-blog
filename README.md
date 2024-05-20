@@ -9,7 +9,7 @@
 - [x] Github sign in
 - [x] Portal and Admin panel separation
 - [] ~Database (\w Drizzle+Postgress on vercel???)~ (decided to move with Github's data source)
-- [] Deployment (\w vercel - dev + stage)
+- [x] Deployment (\w vercel - dev + stage)
 - [] Basic UI
   - [] Theming:
     - [] Setting up neat colors

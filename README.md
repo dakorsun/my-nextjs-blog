@@ -11,10 +11,10 @@
 - [] ~Database (\w Drizzle+Postgress on vercel???)~ (decided to move with Github's data source)
 - [x] Deployment (\w vercel - dev + stage)
 - [] Basic UI
-  - [] Theming:
-    - [] Setting up neat colors
-    - [] Theme switcher
-  - [] Buttons
+  - [x] Theming:
+    - [x] Setting up neat colors
+    - [x] Theme switcher
+  - [x] Buttons
   - [] Inputs/Textareas
 - [] Blog Post template:
   - [] Research - Plain markdown with preview or skeleton

@@ -49,7 +49,7 @@ function AuthButton({ session, sessionLoading }: IAuthButtonProps) {
     return <div>...Loading</div>;
   }
   return (
-    <Button variant="outline" size="default" onClick={() => signIn()}>
+    <Button variant="outline" size="default" onClick={() => signIn('github')}>
       Sign in
     </Button>
   );

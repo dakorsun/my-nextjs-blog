@@ -6,6 +6,7 @@ import { getServerSession } from 'next-auth';
 import SessionProvider from '~/components/SessionProvider';
 import TopNav from '~/components/TopNav';
 import { ThemeProvider } from '~/components/theme-provider';
+import { TRPCReactProvider } from '~/trpc/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,8 +26,10 @@ export default async function RootLayout({
       <body className={`bg-background font-sans ${inter.className} antialiased flex-col gap-4`}>
         <SessionProvider session={session}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <TopNav />
-            {children}
+            <TRPCReactProvider>
+              <TopNav />
+              {children}
+            </TRPCReactProvider>
           </ThemeProvider>
         </SessionProvider>
       </body>

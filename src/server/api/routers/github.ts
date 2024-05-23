@@ -1,5 +1,5 @@
 import { env } from '~/env';
-import { createTRPCRouter, publicProcedure } from '~/server/api/trpc';
+import { createTRPCRouter, protectedProcedure, publicProcedure } from '~/server/api/trpc';
 
 const GITHUB_API_URL = 'https://api.github.com';
 const GITHUB_TOKEN = env.GITHUB_TOKEN;
@@ -9,7 +9,7 @@ async function fetchGitHub(endpoint: string, options: RequestInit = {}) {
     ...options,
     headers: {
       ...options.headers,
-      'Authentication': `Bearer ${GITHUB_TOKEN}`,
+      'Authorization': `Bearer ${GITHUB_TOKEN}`,
       'Content-type': 'application/json',
     },
   });
@@ -17,7 +17,10 @@ async function fetchGitHub(endpoint: string, options: RequestInit = {}) {
 }
 
 export const githubRouter = createTRPCRouter({
-  getIssues: publicProcedure.query(async () => {
+  getIssues: publicProcedure.query(() => {
+    return fetchGitHub('/repos/dakorsun/my-nextjs-blog/issues');
+  }),
+  getIssuesProtected: protectedProcedure(true).query(() => {
     return fetchGitHub('/repos/dakorsun/my-nextjs-blog/issues');
   }),
 });

@@ -2,8 +2,7 @@
 import { api } from '~/trpc/react';
 
 export default function AdminPage() {
-  const { data: issues, isLoading, error } = api.github.getIssues.useQuery();
-  console.log('query');
+  const { data: issues, isLoading, error } = api.github.getIssuesProtected.useQuery();
 
   if (isLoading) {
     return <div className="text-red-700">Loading</div>;

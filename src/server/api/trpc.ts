@@ -12,6 +12,7 @@ import superjson from 'superjson';
 import { ZodError } from 'zod';
 
 import { getServerAuthSession } from 'auth';
+import { isAdminEmail } from '~/util/authentication';
 
 /**
  * 1. CONTEXT
@@ -92,14 +93,18 @@ export const publicProcedure = t.procedure;
  *
  * @see https://trpc.io/docs/procedures
  */
-export const protectedProcedure = t.procedure.use(({ ctx, next }) => {
-  if (!ctx.session || !ctx.session.user) {
-    throw new TRPCError({ code: 'UNAUTHORIZED' });
-  }
-  return next({
-    ctx: {
-      // infers the `session` as non-nullable
-      session: { ...ctx.session, user: ctx.session.user },
-    },
+export const protectedProcedure = (checkAdmin: boolean = false) =>
+  t.procedure.use(({ ctx, next }) => {
+    if (!ctx.session || !ctx.session.user || !ctx.session.user.email) {
+      throw new TRPCError({ code: 'UNAUTHORIZED' });
+    }
+    if (checkAdmin && !isAdminEmail(ctx.session.user.email)) {
+      throw new TRPCError({ code: 'FORBIDDEN' });
+    }
+    return next({
+      ctx: {
+        // infers the `session` as non-nullable
+        session: { ...ctx.session, user: ctx.session.user },
+      },
+    });
   });
-});

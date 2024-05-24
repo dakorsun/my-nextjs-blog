@@ -12,11 +12,17 @@ export default function AdminPage() {
     return <div className="text-red-700">Error: {error.message}</div>;
   }
   return (
-    <div className="min-h-screen flex flex-col justify-start items-start">
+    <div className="flex flex-col justify-start items-start">
       <span>AdminPage</span>
-      <div>
-        <span>Loaded issues</span>
-        <div>{JSON.stringify(Object.keys(issues[0]), null, 2)}</div>
+      <div className="w-fuill p-6">
+        <h1>Loaded issues</h1>
+        {issues &&
+          issues.map(issue => (
+            <div key={issue.id} className="w-full flex-col">
+              <div>{issue.title}</div>
+              <div>{issue.body}</div>
+            </div>
+          ))}
       </div>
     </div>
   );

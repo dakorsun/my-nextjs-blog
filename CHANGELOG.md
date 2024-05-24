@@ -1,3 +1,12 @@
+# [0.1.0-dev.7](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.6...v0.1.0-dev.7) (2024-05-24)
+
+### Features
+
+- added github query ([376bf0e](https://github.com/dakorsun/my-nextjs-blog/commit/376bf0e1f921cc8432e3e5fbbdf6fe6682a6fd08))
+- added trpc with example request ([656ff3e](https://github.com/dakorsun/my-nextjs-blog/commit/656ff3e7dfbeb9e36d38aed0c35abe1ffb3b3d18))
+- implemented bypassing for user access token for api requests ([8c1a3db](https://github.com/dakorsun/my-nextjs-blog/commit/8c1a3dbb8267f00bfb5fb9d946e0a4fd58557a24))
+- initial mapping for github data ([5a7a081](https://github.com/dakorsun/my-nextjs-blog/commit/5a7a08183153f7087626df104a055ea470cba10b))
+
 # [0.1.0-dev.6](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.5...v0.1.0-dev.6) (2024-05-20)
 
 ### Bug Fixes

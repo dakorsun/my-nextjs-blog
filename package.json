@@ -1,6 +1,6 @@
 {
   "name": "my-nextjs-app",
-  "version": "0.1.0-stage.1",
+  "version": "0.1.0-dev.8",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
@@ -12,14 +12,29 @@
     "prettier:write": "prettier --write .",
     "all-lint": "pnpm lint && pnpm prettier:check",
     "all-lint:go": "pnpm lint:fix && pnpm prettier:write",
-    "prepare": "husky"
+    "//prepare": "node .husky/install.mjs",
+    "prepare": "husky || true"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-slot": "^1.0.2",
     "@t3-oss/env-nextjs": "^0.10.1",
+    "@tanstack/react-query": "^5.37.1",
+    "@trpc/client": "11.0.0-rc.374",
+    "@trpc/react-query": "11.0.0-rc.374",
+    "@trpc/server": "11.0.0-rc.374",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.378.0",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "server-only": "^0.0.1",
+    "superjson": "^2.2.1",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -47,8 +62,8 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": "20.13.0",
-    "npm": "10.5.2",
-    "pnpm": "9.1.0"
+    "node": "^20",
+    "npm": "^10",
+    "pnpm": "^9"
   }
 }

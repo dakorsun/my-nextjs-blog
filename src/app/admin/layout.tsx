@@ -1,6 +1,6 @@
-import { AdminProtectedRoute } from '../_components/AdminProtectedRoute';
+import { AdminProtectedRoute } from '~/components/AdminProtectedRoute';
 
-export default function AdminLayout({
+export default async function AdminLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

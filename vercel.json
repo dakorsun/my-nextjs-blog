@@ -5,6 +5,7 @@
       "PNPM_VERSION": "9"
     }
   },
+  "buildCommand": "pnpm install:dev && pnpm build",
   "github": {
     "enabled": true,
     "silent": false,

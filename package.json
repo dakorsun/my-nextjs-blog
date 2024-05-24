@@ -1,6 +1,6 @@
 {
   "name": "my-nextjs-app",
-  "version": "0.1.0-dev.8",
+  "version": "0.1.0-stage.2",
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",

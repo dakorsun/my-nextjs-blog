@@ -1,3 +1,9 @@
+# [0.1.0-dev.8](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.7...v0.1.0-dev.8) (2024-05-24)
+
+### Bug Fixes
+
+- husky now doesn't install on production ([e7e1dd0](https://github.com/dakorsun/my-nextjs-blog/commit/e7e1dd0257f059083592b880cee153d3b1396a73))
+
 # [0.1.0-dev.7](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.6...v0.1.0-dev.7) (2024-05-24)
 
 ### Features

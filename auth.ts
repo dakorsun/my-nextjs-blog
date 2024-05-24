@@ -32,9 +32,19 @@ declare module 'next-auth' {
  */
 const authOptions: NextAuthOptions = {
   callbacks: {
+    jwt: ({ token, account }) => {
+      if (account?.access_token) {
+        token.accessToken = account.access_token;
+      }
+      return token;
+    },
     session: ({ session }) => {
       return {
         ...session,
+        user: {
+          ...session.user,
+          id: session.user.id,
+        },
       };
     },
   },

@@ -13,6 +13,8 @@ import { ZodError } from 'zod';
 
 import { getServerAuthSession } from 'auth';
 import { isAdminEmail } from '~/util/authentication';
+import { getToken } from 'next-auth/jwt';
+import { NextRequest } from 'next/server';
 
 /**
  * 1. CONTEXT
@@ -26,12 +28,19 @@ import { isAdminEmail } from '~/util/authentication';
  *
  * @see https://trpc.io/docs/server/context
  */
-export const createTRPCContext = async (opts: { headers: Headers }) => {
+export const createTRPCContext = async (opts: { headers: Headers; req?: NextRequest }) => {
   const session = await getServerAuthSession();
+  let tokenAddition: { accessToken?: string } = {};
+  if (opts.req) {
+    const token = await getToken({ req: opts.req });
+    tokenAddition.accessToken = token?.accessToken as string;
+    console.log(`create ctx getToken: ${JSON.stringify(token, null, 2)}`);
+  }
 
   return {
     session,
     ...opts,
+    ...tokenAddition,
   };
 };
 
@@ -95,16 +104,17 @@ export const publicProcedure = t.procedure;
  */
 export const protectedProcedure = (checkAdmin: boolean = false) =>
   t.procedure.use(({ ctx, next }) => {
-    if (!ctx.session || !ctx.session.user || !ctx.session.user.email) {
+    const { session } = ctx;
+    if (!session || !session.user || !session.user.email) {
       throw new TRPCError({ code: 'UNAUTHORIZED' });
     }
-    if (checkAdmin && !isAdminEmail(ctx.session.user.email)) {
+    if (checkAdmin && !isAdminEmail(session.user.email)) {
       throw new TRPCError({ code: 'FORBIDDEN' });
     }
     return next({
       ctx: {
         // infers the `session` as non-nullable
-        session: { ...ctx.session, user: ctx.session.user },
+        session: { ...ctx.session, user: session.user },
       },
     });
   });

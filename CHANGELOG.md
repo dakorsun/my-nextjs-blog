@@ -1,3 +1,10 @@
+# [0.1.0-stage.3](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-stage.2...v0.1.0-stage.3) (2024-05-24)
+
+### Bug Fixes
+
+- tailwindcss dependency moved from dev ([fcfbdc3](https://github.com/dakorsun/my-nextjs-blog/commit/fcfbdc37d975534d848368af675859bf9f1467ac))
+- tweaked build process to have separate installation ([a0ec3ab](https://github.com/dakorsun/my-nextjs-blog/commit/a0ec3abeeccfd7774ff4af6f2072b625bca79a0b))
+
 # [0.1.0-stage.2](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-stage.1...v0.1.0-stage.2) (2024-05-24)
 
 ### Bug Fixes

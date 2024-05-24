@@ -12,7 +12,8 @@
     "prettier:write": "prettier --write .",
     "all-lint": "pnpm lint && pnpm prettier:check",
     "all-lint:go": "pnpm lint:fix && pnpm prettier:write",
-    "prepare": "husky"
+    "//prepare": "node .husky/install.mjs",
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.0.6",

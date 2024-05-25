@@ -1,6 +1,6 @@
 {
   "name": "my-nextjs-app",
-  "version": "0.1.0-dev.8",
+  "version": "0.1.0-dev.9",
   "private": true,
   "scripts": {
     "install:dev": "NODE_ENV=development && pnpm install",

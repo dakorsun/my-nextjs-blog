@@ -1,3 +1,9 @@
+# [0.1.0-dev.11](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.10...v0.1.0-dev.11) (2024-05-27)
+
+### Bug Fixes
+
+- **ci:** implemented branch name passing to semantic-release ([9239397](https://github.com/dakorsun/my-nextjs-blog/commit/9239397517ba207f88fce011df3dce633a3017b5))
+
 # [0.1.0-dev.9](https://github.com/dakorsun/my-nextjs-blog/compare/v0.1.0-dev.8...v0.1.0-dev.9) (2024-05-25)
 
 ### Bug Fixes

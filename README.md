@@ -17,9 +17,15 @@
   - [x] Buttons
   - [] Inputs/Textareas
 - [] Github Issues
-  - [] Octokit integration
-  - [] (admin) Create, Read, Update Issues
-  - [] (admin) Predefined labels for Issues
+  - [] ~Octokit integration~ (doing plain fetch form server by now)
+  - [] Issue to Post data transformations:
+    - [] (admin) list all issues on admin home
+    - [] (admin) describe specific issue on separate admin issue page
+    - [] (admin) create issue from admin home
+    - [] (admin) update issue from admin issue page
+    - [] (admin) Predefined labels for Issues
+    - [] implement labels for public issues, staging/dev issues.
+    - [] list public issues at home page
   - [] Display specific labels on Portal
 - [] Blog Post template:
   - [] Research - Plain markdown with preview or skeleton
